@@ -28,6 +28,7 @@ class PostController extends Controller
         return view('pages.create');
     }
 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -65,9 +66,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($title)
     {
-        //
+        $post=post::where('title',$title);
+        return $post;
+        //return view('pages.edit')->with('post',$post);
     }
 
     /**
@@ -77,9 +80,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $title)
     {
-        //
+       
     }
 
     /**

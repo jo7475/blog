@@ -8,7 +8,7 @@
 <h1>Posts</h1>
 @foreach ($posts as $posts)
 <p>{{$posts->id}}</p>
-            <h3>{{$posts->title}}</h3>
+            <h3><a href="/post/{{$posts->title}}/edit">{{$posts->title}}</a></h3>
             <p>{{$posts->description}}</p>
             <small>{{$posts->created_at}}</small>
             <hr>
