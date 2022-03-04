@@ -7,9 +7,16 @@
 @section('posts')
 <h1>Posts</h1>
 @foreach ($posts as $posts)
-<p>{{$posts->id}}</p>
-            <h3><a href="/post/{{$posts->title}}/edit">{{$posts->title}}</a></h3>
-            <p>{{$posts->description}}</p>
+            <p>{{$posts->id}}</p>
+            <h3><a href="/post/{{$posts->id}}/edit">{{$posts->title}}</a></h3>
+            <form action="/post/{{$posts->id}}" method="POST">
+                @method('DELETE')
+                @csrf
+
+            <input type="submit" value="{{$posts->description}} ">
+            
+            </form>
+            <a href="post/{{$posts->id}}">Read more</a>
             <small>{{$posts->created_at}}</small>
             <hr>
         @endforeach

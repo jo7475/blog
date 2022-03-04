@@ -57,7 +57,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post=post::find($id);
+        return view('pages.showblog')->with('post',$post);
     }
 
     /**
@@ -66,11 +67,11 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($title)
+    public function edit($id)
     {
-        $post=post::where('title',$title);
-        return $post;
-        //return view('pages.edit')->with('post',$post);
+        $post=post::find($id);
+       // return $post;
+        return view('pages.edit')->with('post',$post);
     }
 
     /**
@@ -80,9 +81,15 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $title)
+    public function update(Request $request, $id)
     {
-       
+        $post=post::find($id);
+        //return $post;
+        $post->title= $request->title;
+        $post->description= $request->description;
+        $post->save();
+        //return $post;
+        return redirect('post');
     }
 
     /**
@@ -93,6 +100,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //return $description;
+        $post=post::find($id);
+        $post->delete();
+        return redirect('post');
     }
 }

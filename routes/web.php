@@ -16,9 +16,14 @@ use App\Http\Controllers\PostController;
 */
 
 Route::get('/', function () {
-    return view('pages.home');
+    return view('layouts.app');
 });
 Route::view('/home','pages.home');
 Route::view('/maincont','pages.main');
 Route::get('/main',[RouteController::class,'main']);
 Route::resource('post',PostController::class);
+
+Auth::routes();
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
