@@ -25,5 +25,5 @@ Route::resource('post',PostController::class);
 
 Auth::routes();
 
-
+Route::view('/welcome',"pages.welcome");
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

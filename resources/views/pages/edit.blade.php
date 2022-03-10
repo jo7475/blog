@@ -10,9 +10,9 @@
         @method('PUT')
         @csrf
         <label for="title">Title</label>
-        <input type="text" name="title" value={{$post->title}}>
+        <input type="text" name="title" value="{{$post->title}}">
         <label for="description">Description</label>
-        <input type="textarea" name="description" value={{$post->description}}>
+        <input type="textarea" name="description" value="{{$post->description}}">
         <input type="submit">
     </form>
 @endsection

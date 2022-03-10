@@ -37,7 +37,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     { 
-       // dd($request->all());
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
@@ -70,7 +69,6 @@ class PostController extends Controller
     public function edit($id)
     {
         $post=post::find($id);
-       // return $post;
         return view('pages.edit')->with('post',$post);
     }
 
@@ -84,11 +82,9 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $post=post::find($id);
-        //return $post;
         $post->title= $request->title;
         $post->description= $request->description;
         $post->save();
-        //return $post;
         return redirect('post');
     }
 
@@ -100,7 +96,6 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //return $description;
         $post=post::find($id);
         $post->delete();
         return redirect('post');
