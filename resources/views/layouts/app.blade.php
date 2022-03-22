@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <a class="nav-link" href="/post">Posts</a>
 
                     </ul>
 
@@ -77,6 +78,7 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('posts')
         </main>
     </div>
 </body>

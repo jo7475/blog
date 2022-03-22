@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::view('/home','pages.home');
 Route::view('/maincont','pages.main');
 Route::get('/main',[RouteController::class,'main']);
-Route::resource('post',PostController::class);
+Route::resource('post',PostController::class)->middleware('auth');
 
 Auth::routes();
 

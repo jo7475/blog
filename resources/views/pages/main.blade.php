@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('layouts.app')
 
 @section('content')
     <h1>Hello {{$title}}!! Welcome to the Blog</h1>

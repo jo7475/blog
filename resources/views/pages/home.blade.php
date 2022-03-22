@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    @extends('layout.header')
+    @extends('layouts.app')
     @section('content')
     <h1>This is the home page</h1>
     <p>below you can see the react part of the website</p>

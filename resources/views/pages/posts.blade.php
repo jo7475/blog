@@ -1,4 +1,4 @@
-@extends('layout.header')
+@extends('layouts.app')
 @section('content')
 <h1>You are now in the posts page</h1>
 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos exercitationem nisi veritatis animi aliquid deleniti odit ad officia? Debitis ipsum, in beatae quidem quas facilis tenetur. Esse sunt dicta optio?</p>
